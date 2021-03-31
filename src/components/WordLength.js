@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Slider } from '@material-ui/core';
+import { useState, useEffect } from 'react';
 
 const WordLength = (props) => {
     // const [wordLength, setWordLength] = useState(defaultWordLength);
@@ -21,9 +22,9 @@ const WordLength = (props) => {
         },
       });
     const classes = useStyles();
-
-    const updateWordLength = (wordLength) => {
-        props.setWordLength(wordLength);
+    
+    const setWordLength = (val) => {
+        props.setWordLength(val);
     }
 
     return (
@@ -33,7 +34,7 @@ const WordLength = (props) => {
             </span>
             <Slider
                 defaultValue={props.minWordLength}
-                getAriaValueText={updateWordLength}
+                getAriaValueText={() => setWordLength}
                 aria-labelledby="discrete-slider"
                 step={1}
                 marks={true}
