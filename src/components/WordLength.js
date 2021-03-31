@@ -9,6 +9,7 @@ const WordLength = (props) => {
           width: 350,
           display: 'flex',
           justifyContent: 'space-between',
+          marginTop: 50,
         },
         minSliderLabel: {
             marginRight: 15,
@@ -35,7 +36,7 @@ const WordLength = (props) => {
                 getAriaValueText={updateWordLength}
                 aria-labelledby="discrete-slider"
                 step={1}
-                marks
+                marks={true}
                 min={props.minWordLength}
                 max={props.maxWordLength}
                 valueLabelDisplay="auto"

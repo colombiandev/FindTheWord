@@ -1,8 +1,7 @@
 const Word = (props) => {
-
     return (
         <>
-            Word
+            {props.letter}
         </>
     );
 }
