@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { Slider } from '@material-ui/core';
+import { Slider, Typography } from '@material-ui/core';
 import { useState, useEffect } from 'react';
 
 const WordLength = (props) => {
@@ -7,10 +7,15 @@ const WordLength = (props) => {
 
     const useStyles = makeStyles({
         root: {
-          width: 350,
+            marginTop: 40,
+        },
+        slider: {
+          minWidth: 350,
+          maxWidth: 1000,
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: 50,
+          marginTop: 10,
+          marginBottom: 50,
         },
         minSliderLabel: {
             marginRight: 15,
@@ -23,28 +28,34 @@ const WordLength = (props) => {
       });
     const classes = useStyles();
     
-    const setWordLength = (val) => {
+    const setWordLength = (e, val) => {
         props.setWordLength(val);
     }
 
     return (
         <div className={classes.root}>
-            <span className={classes.minSliderLabel}>
-                {props.minWordLength}
-            </span>
-            <Slider
-                defaultValue={props.minWordLength}
-                getAriaValueText={() => setWordLength}
-                aria-labelledby="discrete-slider"
-                step={1}
-                marks={true}
-                min={props.minWordLength}
-                max={props.maxWordLength}
-                valueLabelDisplay="auto"
-            />
-            <span className={classes.maxSliderLabel}>
-                {props.maxWordLength}
-            </span>
+            <Typography variant="h5">
+                Pick Your Word Length!
+            </Typography>
+            <div className={classes.slider}>
+                <span className={classes.minSliderLabel}>
+                    {props.minWordLength}
+                </span>
+                <Slider
+                    color="primary"
+                    defaultValue={props.minWordLength}
+                    onChange={setWordLength}
+                    aria-labelledby="discrete-slider"
+                    step={1}
+                    marks={true}
+                    min={props.minWordLength}
+                    max={props.maxWordLength}
+                    valueLabelDisplay="auto"
+                />
+                <span className={classes.maxSliderLabel}>
+                    {props.maxWordLength}
+                </span>
+            </div>
         </div>
     );
 }

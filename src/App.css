@@ -36,10 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.Letters {
-  max-width: 300px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}

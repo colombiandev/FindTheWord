@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography } from '@material-ui/core';
+import uuid from 'react-uuid';
 
 const Letter = (props) => {
 
@@ -10,25 +11,21 @@ const Letter = (props) => {
       });
     const classes = useStyles();
 
-    const LetterClicked = (e) => {
-        let updatedSelectedLetters = props.selectedLetters.filter((letter) => letter !== e.currentTarget.value);
-        if (updatedSelectedLetters.length === props.selectedLetters.length) {
-            props.setSelectedLetters([...props.selectedLetters, e.currentTarget.value.toString()]);
-        } else {
-            props.setSelectedLetters([...updatedSelectedLetters]);
-        }
+    const letterClicked = (e) => {
+        let letter = e.currentTarget.value.toString();
+        props.setSelectedLetters({...props.selectedLetters, [uuid()]: letter});
     }
 
     return (
         <div className={classes.root}>
             <Button
-            variant="contained" 
-            color="primary" 
-            value={props.letter}
-            onClick={LetterClicked.bind(this)}>
-                <Typography variant="h5" component="h2">
-                    {props.letter}
-                </Typography>
+                variant="contained" 
+                color="primary"
+                value={props.letter}
+                onClick={letterClicked.bind(this)}>
+                    <Typography variant="h5" component="h2">
+                        {props.letter}
+                    </Typography>
             </Button>
         </div>
     );
