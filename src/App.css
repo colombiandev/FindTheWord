@@ -24,6 +24,12 @@
   color: white;
 }
 
+@media (max-width: 650px) {
+  .App-header {
+    justify-content: flex-start;
+  }
+}
+
 .App-link {
   color: #61dafb;
 }

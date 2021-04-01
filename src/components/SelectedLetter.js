@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography } from '@material-ui/core';
 
-const Word = (props) => {
+const SelectedLetter = (props) => {
     const useStyles = makeStyles({
         root: {
             margin: 5,
@@ -30,4 +30,4 @@ const Word = (props) => {
     );
 }
 
-export default Word;
+export default SelectedLetter;

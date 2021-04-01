@@ -1,4 +1,4 @@
-import Word from './Word';
+import SelectedLetter from './SelectedLetter';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -17,7 +17,7 @@ const SelectedLetters = (props) => {
         return(
             Object.keys(props.selectedLetters).map((key) => {
                 return (
-                    <Word 
+                    <SelectedLetter 
                         key={key}
                         id={key}
                         letter={props.selectedLetters[key]}
