@@ -22,7 +22,7 @@ const SelectedLetter = (props) => {
                 value={props.letter}
                 onClick={deleteLetter.bind(this)}
             >
-                    <Typography variant="h5" component="h2">
+                    <Typography variant="h6">
                         {props.letter}
                     </Typography>
             </Button>

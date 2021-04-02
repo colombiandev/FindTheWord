@@ -7,6 +7,7 @@ const Letter = (props) => {
     const useStyles = makeStyles({
         root: {
           margin: 5,
+          size: "small",
         },
       });
     const classes = useStyles();
@@ -23,7 +24,7 @@ const Letter = (props) => {
                 color="primary"
                 value={props.letter}
                 onClick={letterClicked.bind(this)}>
-                    <Typography variant="h5" component="h2">
+                    <Typography variant="h6">
                         {props.letter}
                     </Typography>
             </Button>

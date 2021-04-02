@@ -5,6 +5,9 @@ import { Typography } from '@material-ui/core';
 const LetterPicker = (props) => {
 
     const useStyles = makeStyles({
+        root: {
+            size: "small",
+        },
         letters: {
           maxWidth: 1000,
           display: "flex",
@@ -35,7 +38,7 @@ const LetterPicker = (props) => {
     const classes = useStyles();
 
     return(
-        <div>
+        <div className={classes.root}>
             <Typography variant="h5">
                 Choose Your Letters!
             </Typography>
