@@ -1,7 +1,9 @@
 import './App.css';
-import WordLength from './components/WordLength';
-import SelectedLetters from './components/SelectedLetters';
+import FoundWords from'./components/FoundWords';
 import LetterPicker from './components/LetterPicker';
+import ResultButtons from './components/ResultButtons';
+import SelectedLetters from './components/SelectedLetters';
+import WordLength from './components/WordLength';
 import { useState } from 'react';
 
 
@@ -11,6 +13,7 @@ const App = () => {
   const maxWordLength = 15;
   const [wordLength, setWordLength] = useState(minWordLength);
   const [selectedLetters, setSelectedLetters] = useState({});
+  const [findWords, setFindWords] = useState(false);
 
   
 
@@ -27,10 +30,19 @@ const App = () => {
           maxWordLength={maxWordLength}
           setWordLength={setWordLength}
         />
-        <SelectedLetters 
-          selectedLetters={selectedLetters}
+        <ResultButtons 
+          findWords={findWords}
           setSelectedLetters={setSelectedLetters}
+          setFindWords={setFindWords}
+        />
+        <SelectedLetters 
+          findWords={findWords}
+          selectedLetters={selectedLetters}
           wordLength={wordLength}
+          setSelectedLetters={setSelectedLetters}
+        />
+        <FoundWords 
+          findWords={findWords}
         />
       </header>
     </div>

@@ -6,10 +6,10 @@ const LetterPicker = (props) => {
 
     const useStyles = makeStyles({
         root: {
-            size: "small",
+          maxWidth: 1000,
+          size: "small",
         },
         letters: {
-          maxWidth: 1000,
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",

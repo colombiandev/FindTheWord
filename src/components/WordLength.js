@@ -7,14 +7,13 @@ const WordLength = (props) => {
     const useStyles = makeStyles({
         root: {
             marginTop: 40,
+            minWidth: 350,
+            maxWidth: 1000,
         },
         slider: {
-          minWidth: 350,
-          maxWidth: 1000,
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: 10,
-          marginBottom: 50,
+          margin: 20,
         },
         minSliderLabel: {
             marginRight: 15,
@@ -38,7 +37,9 @@ const WordLength = (props) => {
             </Typography>
             <div className={classes.slider}>
                 <span className={classes.minSliderLabel}>
-                    {props.minWordLength}
+                    <Typography variant="subtitle1">
+                        {props.minWordLength}
+                    </Typography>
                 </span>
                 <Slider
                     color="primary"
@@ -52,7 +53,9 @@ const WordLength = (props) => {
                     valueLabelDisplay="auto"
                 />
                 <span className={classes.maxSliderLabel}>
-                    {props.maxWordLength}
+                    <Typography variant="subtitle1">
+                        {props.maxWordLength}
+                    </Typography>
                 </span>
             </div>
         </div>
