@@ -4,8 +4,7 @@ import LetterPicker from './components/LetterPicker';
 import ResultButtons from './components/ResultButtons';
 import SelectedLetters from './components/SelectedLetters';
 import WordLength from './components/WordLength';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 
 
 const App = () => {
@@ -15,26 +14,10 @@ const App = () => {
   const [wordLength, setWordLength] = useState(minWordLength);
   const [selectedLetters, setSelectedLetters] = useState({});
   const [findWords, setFindWords] = useState(false);
-  const [apiRes, setApiRes] = useState("na");
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/testAPI')
-    .then((res) => {
-      console.log(res);
-      setApiRes(res.data);
-    })
-    .catch((err) => {
-      console.log("ERR", err);
-    })
-    .then(() => {
-      console.log("kek");
-    })
-  }, [])
 
   return (
     <div className="App">
       <header className="App-header">
-        {apiRes}
         <LetterPicker
           alphabet={alphabet}
           selectedLetters={selectedLetters}
