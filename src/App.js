@@ -15,12 +15,11 @@ const App = () => {
   const [wordLength, setWordLength] = useState(minWordLength);
   const [selectedLetters, setSelectedLetters] = useState({});
   const [findWords, setFindWords] = useState(false);
-  const [apiRes, setApiRes] = useState("na");
 
   useEffect(() => {
     axios.get('http://localhost:9000/testAPI')
     .then((res) => {
-      setApiRes(res.data);
+      console.log(res)
     })
     .catch((err) => {
       console.log("ERR", err);
@@ -33,7 +32,6 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        {apiRes}
         <LetterPicker
           alphabet={alphabet}
           selectedLetters={selectedLetters}
