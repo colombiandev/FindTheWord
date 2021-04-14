@@ -23,13 +23,13 @@ app.use(cors())
 // Let's make a route for an HTTP GET request to the 
 // 'root' of our app (i.e. top level domain '/')
 
-app.get('/', (req, res) => {
-	// sending a string
-	res.send('This should be the root route!')
+// app.get('/', (req, res) => {
+// 	// sending a string
+// 	res.send('This should be the root route!')
 
-	//sending some HTML
-	//res.send('<h1>This should be the root route!</h1>')
-})
+// 	//sending some HTML
+// 	//res.send('<h1>This should be the root route!</h1>')
+// })
 
 app.get('/testAPI', (req, res) => {
 	// sending a string
@@ -52,7 +52,7 @@ app.get('/problem', (req, res) => {
 
 
 // will use an 'environmental variable', process.env.PORT, for deployment.
-const port = process.env.PORT || 9000
+const port = process.env.PORT || 5000
 app.listen(port, () => {
 	log(`Listening on port ${port}...`)
 })  // localhost development port 5000  (http://localhost:5000)
